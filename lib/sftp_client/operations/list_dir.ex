@@ -36,6 +36,6 @@ defmodule SFTPClient.Operations.ListDir do
     entries
     |> Stream.reject(&(&1 in ['.', '..']))
     |> Stream.map(&to_string/1)
-    |> Enum.sort()
+    |> Enum.to_list()
   end
 end
